@@ -3,6 +3,7 @@ MAINTAINER doktoric
 
 
 RUN logstash-plugin install logstash-filter-json
-#Configure Logstash INPUT and FILTER
+
 ADD	/logstash/config/logstash.yml /usr/share/logstash/config/logstash.yml
 ADD /logstash/pipeline /usr/share/logstash/pipeline
+CMD ["-f", "/usr/share/logstash/pipeline/logstash.conf"]
